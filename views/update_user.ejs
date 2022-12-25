@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="main-site">
+      <div class="container">
+        <div class="box-nav d-flex justify-between">
+          <div class="filter">
+            <a href="/">
+              <i class="fas fa-angle-double-left"></i> Update Users
+            </a>
+          </div>
+        </div>
+        <form action="" method="post" id="update_user">
+          <div class="new_user">
+            <div class="form-group">
+              <label for="name" class="text-light">name</label>
+              <input type="hidden" name="id" value="<%= user._id%>" />
+              <input
+                type="text"
+                name="name"
+                id=""
+                value="<%= user.name%>"
+                placeholder="Sereme"
+              />
+            </div>
+            <div class="form-group">
+              <label for="name" class="text-light">Email</label>
+              <input
+                type="email"
+                name="email"
+                id=""
+                value="<%= user.email%>"
+                placeholder="Sereme@gmail.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="name" class="text-light">Gender</label>
+              <div class="radio inline">
+                <input type="radio" name="gender" value="Male" <%= user.gender
+                == 'Male' ?'checked':''%>/>
+                <label for="gender" class="text-light">Male</label>
+                <input type="radio" name="gender" value="Female" <%= user.gender
+                == 'Female' ?'checked':''%>/>
+                <label for="gender" class="text-light">Female</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="text-light">Status</label>
+              <div class="radio inline">
+                <input type="radio" name="status" value="active" <%= user.status
+                == 'active' ?'checked':''%>/>
+                <label for="gender" class="text-light">Active</label>
+                <input type="radio" name="status" value="inactive" <%=
+                user.status == 'inactive' ?'checked':''%>/>
+                <label for="gender" class="text-light">Inactive</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
